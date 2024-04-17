@@ -1,11 +1,14 @@
 package com.zwl.entity;
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 /**
  * 商品类别表
  */
 @Table(name = "type_info")
+@Data
 public class TypeInfo {
     /**
      * 自增id

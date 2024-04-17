@@ -224,6 +224,13 @@ public class OrderInfoService {
         return orderGoodsRelMapper.totalShopping();
     }
 
+//    /**
+//     * 统计总销量
+//     */
+//    public Integer totalShopping(){
+//        return orderGoodsRelMapper.totalShopping();
+//    }
+//
     /**
      * 分类总销售额
      */

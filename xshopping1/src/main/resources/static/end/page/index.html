@@ -63,8 +63,8 @@
         </div>
     </nav>
 
-    <div id="page-wrapper">
-        <div id="page-inner">
+    <div id="page-wrapper" style="background-color: #ffd6e4">
+        <div id="page-inner" >
             <!--显示总数数据-->
             <div class="row">
                 <div class="col-md-3">
@@ -82,7 +82,7 @@
                 <div class="col-md-3">
                     <div class="main-box" style="background-color: gold">
                         <i class="fa fa-rmb" style="padding-right: 10px"></i>
-                        <span>总交易额 : {{totalPrice}} 元</span>
+                        <span>总交易额(已付款): {{totalPrice}} 元</span>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -93,20 +93,22 @@
                 </div>
             </div>
             <!--显示图表数据-->
-            <div class="row">
+            <div class="row" style="background-color: #ffefd6;">
                 <div class="col-md-12">
                     <div class="panel-heading">
                         <select @change="selectEchartsType" v-model="echartsType">
                             <option value="pie">饼图</option>
                             <option value="bar">柱状图</option>
+                            <option value="line">折线图</option>
+                            <option value="scatter">散点图</option>
                         </select>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body" >
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div id="left" style="width: 100%; height: 400px;"></div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div id="right" style="width: 100%; height: 400px;"></div>
                             </div>
                         </div>
@@ -136,7 +138,7 @@
             totalComment: 0,       //评论总数
             totalPrice: 0,         //已完成的总交易额总数
             totalShopping: 0,      //获取总销量
-            echartsType: 'bar',    //初始默认为饼图
+            echartsType: 'pie',    //初始默认为饼图
             echartShowLeftArr: [], //左侧图表数据
             echartShowRightArr: [], //右侧图表数据
         },

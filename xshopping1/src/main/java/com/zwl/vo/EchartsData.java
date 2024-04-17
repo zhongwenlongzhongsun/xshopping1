@@ -1,5 +1,7 @@
 package com.zwl.vo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -7,6 +9,7 @@ import java.util.Map;
 /**
  *   Echarts图形需要的格式数据
  */
+@Data
 public class EchartsData implements Serializable {
 
     private Map title;      //标题
@@ -15,55 +18,6 @@ public class EchartsData implements Serializable {
     private Map xAxis;
     private Map yAxis;
     private List<Series> series; //饼图中的数据
-
-    public static class Series{
-
-        private String name;
-        private String type;
-        private String radius;
-        private Boolean showBackground;
-        private List<Object> data;
-
-        public Boolean getShowBackground() {
-            return showBackground;
-        }
-
-        public void setShowBackground(Boolean showBackground) {
-            this.showBackground = showBackground;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
-        }
-
-        public String getRadius() {
-            return radius;
-        }
-
-        public void setRadius(String radius) {
-            this.radius = radius;
-        }
-
-        public List<Object> getData() {
-            return data;
-        }
-
-        public void setData(List<Object> data) {
-            this.data = data;
-        }
-    }
 
     public Map getTitle() {
         return title;
@@ -112,4 +66,27 @@ public class EchartsData implements Serializable {
     public void setSeries(List<Series> series) {
         this.series = series;
     }
+
+    @Data
+    public static class Series{
+
+        private String name;
+        private String type;
+        private List<String> radius;
+        private Boolean showBackground;
+        private List<Object> data;
+        private Object areaStyle;
+        private Boolean boundaryGap;
+        private Boolean smooth;
+        private Boolean avoidLabelOverlap;
+        private Integer symbolSize;
+        private Map label;
+        private Map labelLine;
+        private Map emphasis;
+        private Map emphasisLabel;
+        private Map emphasisItemStyle;
+        private Map itemStyle;
+
+    }
+
 }

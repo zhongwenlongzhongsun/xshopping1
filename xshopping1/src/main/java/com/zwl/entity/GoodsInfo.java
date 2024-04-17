@@ -1,6 +1,7 @@
 package com.zwl.entity;
 
 import cn.hutool.core.util.StrUtil;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
  * 商品详情表
  */
 @Table(name = "goods_info")
+@Data
 public class GoodsInfo {
     //@Column：在数据库中的字段
     //@Transient：不在数据库中的字段
@@ -120,142 +122,6 @@ public class GoodsInfo {
      */
     @Transient
     private String descriptionView;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(Double discount) {
-        this.discount = discount;
-    }
-
-    public Integer getSales() {
-        return sales;
-    }
-
-    public void setSales(Integer sales) {
-        this.sales = sales;
-    }
-
-    public Integer getHot() {
-        return hot;
-    }
-
-    public void setHot(Integer hot) {
-        this.hot = hot;
-    }
-
-    public String getRecommend() {
-        return recommend;
-    }
-
-    public void setRecommend(String recommend) {
-        this.recommend = recommend == null ? null : recommend.trim();
-    }
-
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
-    public Long getTypeid() {
-        return typeid;
-    }
-
-    public void setTypeid(Long typeid) {
-        this.typeid = typeid;
-    }
-
-    public String getFields() {
-        return fields;
-    }
-
-    public void setFields(String fields) {
-        this.fields = fields == null ? null : fields.trim();
-    }
-
-    public Long getUserid() {
-        return userid;
-    }
-
-    public void setUserid(Long userid) {
-        this.userid = userid;
-    }
-
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
-    }
-
-    public String getTypeName() {
-        return typeName;
-    }
-
-    public void setTypeName(String typeName) {
-        this.typeName = typeName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public List<Long> getFileList() {
-        return fileList;
-    }
-
-    public void setFileList(List<Long> fileList) {
-        this.fileList = fileList;
-    }
-
-    public String getCommentStatus() {
-        return commentStatus;
-    }
-
-    public void setCommentStatus(String commentStatus) {
-        this.commentStatus = commentStatus;
-    }
 
     public String getDescriptionView() {
         if(StrUtil.isEmpty(description)){

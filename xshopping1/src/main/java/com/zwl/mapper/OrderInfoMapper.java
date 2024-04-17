@@ -28,7 +28,9 @@ public interface OrderInfoMapper extends Mapper<OrderInfo> {
     void updateStatus(@Param("id")Long id,@Param("status") String status);
 
     //统计已完成的总交易额
-    @Select("select sum(totalPrice) from order_info where status = '完成'")
+    @Select("SELECT SUM(totalPrice) AS total_amount\n" +
+            "FROM order_info\n" +
+            "WHERE status IN ('完成', '待发货', '已发货','待收货');")
     Double totalPrice();
 
     //分类总销售额
@@ -40,9 +42,32 @@ public interface OrderInfoMapper extends Mapper<OrderInfo> {
     List<Map<String,Object>> getTypePrice();
 
     //分类总销售量
-    @Select("select a.count as count, c.name\n" +
+//    @Select("select a.count as count, c.name\n" +
+//            "from order_goods_rel as a \n" +
+//            "left join goods_info as b on a.goodsId = b.id \n" +
+//            "left join type_info as c on c.id = b.typeId")
+    @Select("select sum(a.count) as count, c.name \n" +
             "from order_goods_rel as a \n" +
             "left join goods_info as b on a.goodsId = b.id \n" +
-            "left join type_info as c on c.id = b.typeId")
+            "left join type_info as c on c.id = b.typeId\n" +
+            "GROUP BY c.name")
     List<Map<String,Object>> getTypeCount();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

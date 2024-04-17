@@ -1,5 +1,7 @@
 package com.zwl.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -7,6 +9,7 @@ import java.util.List;
  *   订单信息表
  */
 @Table(name = "order_info")
+@Data
 public class OrderInfo {
     /**
      * 自增id
@@ -75,62 +78,6 @@ public class OrderInfo {
     @Transient
     private List<GoodsInfo> goodsList;
 
-    public UserInfo getUserInfo() {
-        return userInfo;
-    }
-
-    public void setUserInfo(UserInfo userInfo) {
-        this.userInfo = userInfo;
-    }
-
-    public List<GoodsInfo> getGoodsList() {
-        return goodsList;
-    }
-
-    public void setGoodsList(List<GoodsInfo> goodsList) {
-        this.goodsList = goodsList;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getOrderid() {
-        return orderid;
-    }
-
-    public void setOrderid(String orderid) {
-        this.orderid = orderid == null ? null : orderid.trim();
-    }
-
-    public Double getTotalprice() {
-        return totalprice;
-    }
-
-    public void setTotalprice(Double totalprice) {
-        this.totalprice = totalprice;
-    }
-
-    public Long getUserid() {
-        return userid;
-    }
-
-    public void setUserid(Long userid) {
-        this.userid = userid;
-    }
-
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
-    }
-
     public String getLinkaddress() {
         return linkaddress;
     }
@@ -139,35 +86,4 @@ public class OrderInfo {
         this.linkaddress = linkaddress == null ? null : linkaddress.trim();
     }
 
-    public String getLinkphone() {
-        return linkphone;
-    }
-
-    public void setLinkphone(String linkphone) {
-        this.linkphone = linkphone == null ? null : linkphone.trim();
-    }
-
-    public String getLinkman() {
-        return linkman;
-    }
-
-    public void setLinkman(String linkman) {
-        this.linkman = linkman == null ? null : linkman.trim();
-    }
-
-    public String getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(String createtime) {
-        this.createtime = createtime == null ? null : createtime.trim();
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
-    }
 }

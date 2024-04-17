@@ -1,11 +1,14 @@
 package com.zwl.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 /**
  *   订单商品关系映射表
  */
 @Table(name = "order_goods_rel")
+@Data
 public class OrderGoodsRel {
     /**
      * 自增id
@@ -32,35 +35,4 @@ public class OrderGoodsRel {
     @Column(name = "count")
     private Integer count;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getOrderid() {
-        return orderid;
-    }
-
-    public void setOrderid(Long orderid) {
-        this.orderid = orderid;
-    }
-
-    public Long getGoodsid() {
-        return goodsid;
-    }
-
-    public void setGoodsid(Long goodsid) {
-        this.goodsid = goodsid;
-    }
-
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
 }

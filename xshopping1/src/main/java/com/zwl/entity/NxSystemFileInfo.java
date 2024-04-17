@@ -1,5 +1,7 @@
 package com.zwl.entity;
 
+import lombok.Data;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -9,6 +11,7 @@ import javax.persistence.Table;
  * 图片文件表
  */
 @Table(name = "nx_system_file_info")
+@Data
 public class NxSystemFileInfo {
     /**
      * 自增id
@@ -27,27 +30,4 @@ public class NxSystemFileInfo {
      */
     private String filename;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getOriginname() {
-        return originname;
-    }
-
-    public void setOriginname(String originname) {
-        this.originname = originname == null ? null : originname.trim();
-    }
-
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename == null ? null : filename.trim();
-    }
 }

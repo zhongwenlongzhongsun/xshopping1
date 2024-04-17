@@ -4,25 +4,25 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-//¶©µ¥ÉÌÆ·¹ØÏµÓ³Éä±í
+//è®¢å•å•†å“æ˜ å°„è¡¨
 @Table(name = "order_goods_rel")
 @Data
 public class OrderGoodsRel {
 
-    //×ÔÔöID
+    //è‡ªå¢ID
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //¶©µ¥ID
+    //è®¢å•ID
     @Column(name = "orderId")
     private Long orderid;
 
-    //ËùÊôÉÌÆ·
+    //å•†å“ID
     @Column(name = "goodsId")
     private Long goodsid;
 
-    //ÉÌÆ·ÊıÁ¿
+    //è®¢å•æ•°é‡
     @Column(name = "count")
     private Integer count;
 
